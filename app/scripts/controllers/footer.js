@@ -14,16 +14,20 @@ angular.module('malandracaSiteApp')
         volume:50,
         playing: false
     }
-    
-    $scope.player.volume=50;
+
     $scope.$watch('player.volume', function() {
-        console.log($scope.player.volume);
+        soundPlayer.setVolume($scope.player.volume);
     });
     
-    
     $scope.play = function(){
-        //alert($scope.player.volume);
-        soundPlayer.play('http://radio.pregonera.net:6366/1/;');
-       
+        soundPlayer.play();
+        $scope.player.playing = soundPlayer.isPlaying();
     };
+    
+    $scope.stop = function(){
+        soundPlayer.stop();
+        $scope.player.playing = false;
+    };
+    
+    $scope.play();
   });

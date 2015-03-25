@@ -11,9 +11,11 @@
 angular
   .module('malandracaSiteApp', [
     'ngRoute',
-    'ngAnimate'
+    'ngAnimate',
+    'ui.bootstrap-slider'
   ])
   .value('soundManager', soundManager)
+  .constant('STREAM_URL','http://radio.pregonera.net:6366/1/;')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

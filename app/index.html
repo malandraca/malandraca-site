@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="bower_components/jquery-simple-slider/css/simple-slider.css" />
+    <link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -25,19 +25,17 @@
 
     <!-- Add your site or application content here -->
     <div class="header">
-         <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+         <!--<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <!--<a class="navbar-brand page-scroll" href="#page-top">
+                    <a class="navbar-brand page-scroll" href="#page-top">
                         <i class="fa fa-play-circle"></i>  <span class="light">Start</span> Bootstrap
-                    </a>-->
+                    </a>
                 </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <!--<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                     <ul class="nav navbar-nav">
     
                         <li class="hidden">
@@ -53,11 +51,9 @@
                             <a class="page-scroll" href="#contact">Contacto</a>
                         </li>
                     </ul>
-                </div>-->
-                <!-- /.navbar-collapse -->
+                </div>
             </div>
-            <!-- /.container -->
-        </nav>
+        </nav>-->
     </div>
       
     <div class="container">
@@ -81,13 +77,17 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/jquery-simple-slider/js/simple-slider.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/jquery-shoutcast/index.js"></script>
+    <script src="bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
+    <script src="bower_components/angular-bootstrap-slider/slider.js"></script>
     <!-- endbower -->
+
     <script src="bower_components/soundmanager2/script/soundmanager2.js"></script>
     <!-- endbuild -->
 
@@ -100,5 +100,22 @@
         <script src="scripts/directives/footer.js"></script>
         <script src="scripts/services/soundplayer.js"></script>
         <!-- endbuild -->
+      <script src="http://www.malandraca.com/js/jquery.shoutcast.min.js"></script>
+      
+      
+       <script type="text/javascript">
+        //<![CDATA[
+        $(document).ready(function () {
+            $.SHOUTcast({
+               host : 'radio.pregonera.net',
+               port : 6366,
+               interval : 5000,
+               stats : function(){
+                  $('#songName').text(this.get('songtitle').toLowerCase());
+               }
+            }).startStats();
+        });
+         //]]>
+    </script>
 </body>
 </html>

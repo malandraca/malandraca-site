@@ -9,30 +9,83 @@
  */
 angular.module('malandracaSiteApp')
   .factory('soundPlayer', [
-    'soundManager', function (soundManager) {
-        return {
-            // the method play gets a relative/absolute sound file url to play
+    'soundManager', 'STREAM_URL', function (soundManager, streamUrl) {
+        var volume = 50,
+            soundStreamId = 'malandracaRadioStream',
+            radioSound;
+        var soundManagerContext = {
             play: function (url) {
-                soundManager.setup({
+                if(soundManager.ok()){
+                     if (radioSound !=null){
+                        if(radioSound.playState == 0){
+                            radioSound.play();
+                        }
+                     }
+                }
+            },
+            getVolume: function(){
+                return volume;
+            },
+            setVolume: function(changedValue){
+                if(soundManager.ok() && radioSound!= null){
+                    if(changedValue > 100) changedValue = 100;
+                    if(changedValue < 0) changedValue = 0;
+
+                    try{	
+                       radioSound.setVolume(changedValue);
+                    }catch(e){};
+                }
+                volume = changedValue;
+            },
+            stop: function(){
+                soundManager.unload(soundStreamId);
+                soundManagerContext.createSound();
+                soundManager.stopAll();
+            },
+            createSound:function(){
+                radioSound = soundManager.createSound({
+                        id: soundStreamId,
+                        url: streamUrl,
+                        autoPlay: false,
+                        stream: true,
+                        autoLoad: true,
+                        volume: 50
+                });
+            },
+            isPlaying: function(){
+                 if (radioSound !=null){
+                    return radioSound.playState == 1;
+                 }
+                 return false;
+            }
+        }
+        
+           //init sound manger
+        try{
+            soundManager.setup({
                     // set debugMode to 'false' for less verbose
                     debugMode: true,
                     url: 'REPLACE_WITH_YOUR_SWF_PATH',
+                    useHighPerformance: true,
+                    preferFlash: true,
+                    useFastPolling:true,
                     onready: function () {
-                        var mySound = soundManager.createSound({
-                            url: url
-                        });
-                        mySound.play();
+                        soundManagerContext.createSound();
                     },
                     // some error handling
                     ontimeout: function () {
-                        alert('error!');
-                        // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
+                        //soundManager.destroySound(this.soundId);
                     }
                 });
-            },
-            stop: function(){
-                
-            }
+        }catch(ex){
+            console.log('Cannot instanciate sound manager');
         }
+        
+        
+        
+        
+        
+        return soundManagerContext;
+        
     }
 ]);

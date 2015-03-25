@@ -11,21 +11,23 @@ body {
     font-family: "Lato";
     font-weight: 300;
     color: #555;
-    min-width: 480px;
+ 
 
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
 }
 
+
 .footer {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   width: 100%;
   height: 60px;
+
 }
 
 .header{
-      min-height: 50px;
+      /*min-height: 50px;*/
 }
 
 .row-centered {
@@ -39,7 +41,8 @@ body {
 
 #logo{
     margin-top: 15%;
-
+   min-width: 450px;
+   min-height: 450px;
 }
 
 #logo h1 {
@@ -109,7 +112,7 @@ body {
     height: auto !important;
     text-align:center;*/
     height: auto !important;
-    max-width: 45%;
+    max-width: 40%;
     display: inline-block;
 }
 
@@ -185,4 +188,51 @@ a:focus {
 
 .navbar-custom .nav li.active a:hover {
     color: #fff;
+}
+
+
+
+.player {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 6px 6px 6px 6px;
+}
+
+.player-controls {
+    text-align: right;
+}
+
+.slider {
+    display: inline-block;
+    padding-top: 5px;
+}
+
+.song-info {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1em;
+    color: #fff;
+}
+
+#volume .slider-handle {
+	background: rgb(239, 144, 15);
+}
+
+#volume .slider.slider-horizontal {
+  width: 100px;
+height: 2px;
+    
+  
+}
+
+#volume .slider.slider-horizontal {
+ display: inline-block;
+}
+
+#volume {
+ display: inline;
+ margin-right: 12px;
+    height: 2px;
 }
