@@ -24,7 +24,7 @@ module.exports = function(config) {
       'bower_components/angular/angular.js',
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-      'bower_components/jquery.easing/js/jquery.easing.js',
+      'bower_components/jquery-simple-slider/js/simple-slider.js',
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower

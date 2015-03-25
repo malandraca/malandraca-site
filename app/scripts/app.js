@@ -13,6 +13,7 @@ angular
     'ngRoute',
     'ngAnimate'
   ])
+  .value('soundManager', soundManager)
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -30,4 +31,4 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })

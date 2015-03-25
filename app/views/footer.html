@@ -1,0 +1,16 @@
+<div id="footer" class="footer">
+    <div class="player">
+        <div class="player-controls">
+    <!--        <input width="50" id="volume" type="text" data-slider="true" value="50" data-slider-range="0,100" data-slider-step="1">-->
+            <input type="range" min="0" max="100" ng-model="player.volume" class="slider" />
+            <button class="play" role="button" tabindex="0" ng-click='play()'><span class="fa fa-play"></span>
+            </button>
+            <button class="stop hide" role="button" tabindex="0"><span class="fa fa-stop"></span>
+            </button>
+
+        </div>
+        <div class="song-info">
+            <spam id="songName">Troilo Anibal, Some son some son</spam>
+        </div>
+    </div>
+</div>
