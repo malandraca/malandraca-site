@@ -40,9 +40,9 @@ body {
 }
 
 #logo{
-    margin-top: 15%;
-   min-width: 450px;
-   min-height: 450px;
+   margin-top: 15%;
+   min-width: 320px;
+   min-height: 320px;
 }
 
 #logo h1 {
@@ -102,6 +102,28 @@ body {
     
     #logo-image {
         max-width: 40%;
+    }
+}
+
+
+
+@media screen and (max-width: 360px) {
+    #logo h1 {
+        font-size: 2em;
+        font-weight: 600;
+    }
+
+    #logo h1 span{
+        font-size: 1.4em;
+    }
+    
+    #logo h2 {
+        font-size: 1em;
+        padding-left: 7.5em;
+    }
+    
+    #logo-image {
+        max-width: 20%;
     }
 }
 

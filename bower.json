@@ -3,16 +3,15 @@
   "version": "0.0.0",
   "dependencies": {
     "normalize.css": "~3.0.2",
+    "font-awesome": "~4.3.0",
     "bootstrap": "^3.2.0",
     "angular-route": "1.2.28",
     "angular": "1.2.28",
     "angular-bootstrap": "~0.12.1",
-    "components-font-awesome": "~4.3.0",
     "angular-animate": "1.2.28",
-    "jquery-shoutcast": "https://raw.githubusercontent.com/Wavestreaming/jquery-shoutcast/master/jquery.shoutcast.min.js",
-    "soundmanager2": "*",
     "angular-bootstrap-slider": "~0.1.1",
-    "font-awesome": "~4.3.0"
+    "jquery-shoutcast": "https://raw.githubusercontent.com/Wavestreaming/jquery-shoutcast/master/jquery.shoutcast.min.js",
+    "soundmanager2": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.28"

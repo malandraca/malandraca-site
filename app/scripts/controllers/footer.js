@@ -29,5 +29,8 @@ angular.module('malandracaSiteApp')
         $scope.player.playing = false;
     };
     
+    $scope.$on('onStopSlide', function(event, mass) { alert('pepe'); });
+    
+    
     $scope.play();
   });
