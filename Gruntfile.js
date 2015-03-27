@@ -11,6 +11,8 @@ module.exports = function (grunt) {
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
+  
+  grunt.loadNpmTasks('grunt-gh-pages');
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
@@ -61,6 +63,15 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
+    },
+
+    'gh-pages': {
+        options: {
+          base: 'dist',
+          branch: 'master',
+          repo: 'https://github.com/malandraca/malandraca.github.io.git'
+        },
+        src: ['**']
     },
 
     // The actual grunt server settings
@@ -340,12 +351,13 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>',
           src: [
             '*.{ico,png,txt}',
+            'CNAME',
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*'
-          ]
+          ]            
         }, {
           expand: true,
           cwd: '.tmp/images',
