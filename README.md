@@ -14,3 +14,6 @@ Running `grunt test` will run the unit tests with karma.
 ## Deploy (deploys to main site)
 
 grunt gh-pages
+
+
+"ngCordova": "v0.1.14-alpha"
